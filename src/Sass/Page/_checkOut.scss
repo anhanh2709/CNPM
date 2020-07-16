@@ -1,0 +1,235 @@
+.checkOut {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 440px;
+    height: auto;
+    @extend .box-shadow-1;
+    .checkOut__content {
+        padding: 0 40px 100px;
+        .total {
+            @extend .borderDashed;
+            margin-bottom: 15px;
+            height: 80px;
+            display: flex;
+            justify-content: center;
+            p {
+                width: 300px;
+                margin: auto;
+                text-align: center;
+                line-height: 80px;
+                @include text($color-green-3, $fs-4 * 2, $fw-medium);
+                margin-bottom: $mg-3;
+            }
+        }
+        .infoFilm {
+            @extend .borderDashed;
+            padding-bottom: $pd-2 - 2.5;
+            p {
+                margin: 0;
+                @include text($color-black-0, $fs-0, $fw-regular);
+            }
+            p:first-child {
+                margin-bottom: $mg-0;
+                @include text($color-black-0, $fs-3, $fw-medium);
+                span {
+                    float: left;
+                    margin-right: $mg-0;
+                }
+            }
+        }
+        .chair,
+        .combo {
+            @extend .borderDashed;
+            padding: $pd-2 - 2.5 0;
+            margin-bottom: $mg-5 - 2.5;
+            p {
+                margin: 0;
+            }
+            .itemChair,
+            .itemCombo {
+                padding-left: $pd-2;
+                @include text($color-red, $fs-0, $fw-regular);
+                img {
+                    margin-right: $mg-2 + 1;
+                    width: 17px;
+                    height: 22px;
+                }
+            }
+            .itemPrice {
+                text-align: right;
+                padding: 0 $pd-2;
+                p {
+                    @include text($color-green-3, $fs-4, $fw-medium);
+                }
+            }
+        }
+        .combo {
+            .itemCombo {
+                span {
+                    @include text($color-black-0, $fs-0, $fw-regular);
+                }
+            }
+        }
+        .emailUser,
+        .phoneUser {
+            position: relative;
+            @extend .borderDashed;
+            margin-bottom: $mg-4 - 0.5;
+            padding-bottom: $pd-2 - 2.5;
+            label {
+                position: absolute;
+                margin: 0;
+                top: 0;
+                left: 0;
+                cursor: pointer;
+                transition: all .3s;
+                @include text($color-gray-1, $fs-3, $fw-regular);
+            }
+            input {
+                width: 100%;
+                padding-right: $pd-1 / 2;
+                border: none;
+                margin-top: $mg-0;
+                @include text($color-black-0, $fs-1, $fw-regular);
+                cursor: auto;
+                transition: all .3s;
+                &:focus {
+                    margin-top: $mg-0;
+                    padding-top: $pd-2 - 2.5;
+                    outline: none;
+                    +label {
+                        @include text($color-blue-7, $fs-1, $fw-light);
+                        top: 2px;
+                    }
+                }
+            }
+        }
+        .voucher {
+            position: relative;
+            @extend .borderDashed;
+            margin-bottom: $mg-4 - 0.5;
+            padding-bottom: $mg-4 - 2.5;
+            .voucher__promotion {
+                label {
+                    position: absolute;
+                    margin: 0;
+                    top: 2px;
+                    left: 0;
+                    transition: all .3s;
+                    @include text($color-gray-1, $fs-1, $fw-light);
+                }
+                input {
+                    width: 75%;
+                    border: none;
+                    margin-top: $mg-0;
+                    padding-top: $mg-4 - 2.5;
+                    padding-right: $pd-1 / 2;
+                    cursor: auto;
+                    transition: all .3s;
+                    &:focus {
+                        margin-top: $mg-0;
+                        padding-top: $pd-2 - 2.5;
+                        outline: none;
+                        +label {
+                            color: $color-blue-7;
+                        }
+                    }
+                    &::placeholder {
+                        @include text($color-black-0, $fs-0, $fw-light);
+                    }
+                }
+            }
+            .voucher__button {
+                text-align: right;
+                top: 5px;
+                button {
+                    @include text($color-white-0, $fs-2, $fw-light);
+                    background-color: $color-gray-7;
+                    border-radius: 6px;
+                    padding: $pd-0 - 4 $pd-0 - 2;
+                    cursor: pointer;
+                }
+            }
+        }
+        .paymentMethods {
+            margin-bottom: 40%;
+            cursor: pointer;
+            .payment {
+                @include text($color-black-1, $fs-3, $fw-regular);
+                margin-bottom: $mg-0;
+            }
+            .notification {
+                margin: 0;
+                padding: $pd-0 - 4 0;
+                letter-spacing: -0.5px;
+                @include text($color-red, $fs-2, $fw-regular);
+            }
+        }
+        .note {
+            position: absolute;
+            bottom: 60px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            padding: 0 $pd-3 * 2 4%;
+            img {
+                width: 16px;
+                height: 16px;
+                margin-right: $mg-2;
+            }
+            .title {
+                margin: 0;
+                @include text($color-gray-3, $fs-0, $fw-regular);
+                span {
+                    color: $color-orange-1;
+                }
+            }
+        }
+        .btnBuyTicket {
+            position: absolute;
+            padding-top: $pd-2;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            button {
+                padding: 0;
+                background-color: $color-gray-7;
+                border-radius: 0;
+                width: 100%;
+                height: 60px;
+                @include text($color-white-4, $fs-6, $fw-regular);
+            }
+        }
+    }
+}
+
+@media screen and (min-width: getBreakpoints('medium')) and (max-width: getBreakpoints('large')) {
+    .checkOut {
+        width: 210px;
+    }
+}
+
+@include mediaQueryMax(getBreakpoints('medium')) {
+    .checkOut {
+        display: none;
+    }
+}
+
+@media screen and (min-width: getBreakpoints('medium')) and (max-width: 950px) {
+    .checkOut {
+        width: 220px;
+    }
+}
+
+@media screen and (min-width: 950px) and (max-width: getBreakpoints('large')) {
+    .checkOut {
+        width: 280px;
+    }
+}
+
+@media screen and (min-width: getBreakpoints('large')) and (max-width: getBreakpoints('extra-large')) {
+    .checkOut {
+        width: 280px;
+    }
+}

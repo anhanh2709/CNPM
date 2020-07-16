@@ -1,0 +1,104 @@
+.header {
+    position: fixed;
+    top: -1px;
+    width: 100%;
+    z-index: 10;
+    @extend .box-shadow-1;
+    background-color: rgba(255, 255, 255, .95);
+    .navbar {
+        padding: 0;
+        width: 100% !important;
+        .navbar-toggler {
+            text-align: right;
+            img {
+                width: 25px;
+            }
+            &:focus {
+                outline: none;
+            }
+        }
+        .header-left {
+            a {
+                outline: none;
+                img {
+                    width: 50px;
+                }
+            }
+        }
+        .header-center {
+            .collapse {
+                display: flex;
+                justify-content: center;
+                .navbar-nav {
+                    .nav-item {
+                        .nav-link {
+                            margin-right: $mg-6;
+                            padding: 0;
+                            @include text($color-black-0, $fs-0, $fw-normal);
+                            transition: all 0.2s;
+                            &:hover {
+                                color: $color-red;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .header-right {
+            display: flex;
+            justify-content: flex-end;
+            .avatar {
+                padding: 0 11px 0 0;
+                border-right: 1px solid $color-gray-0;
+                a {
+                    &:hover {
+                        text-decoration: none;
+                    }
+                    img {
+                        width: 30px;
+                        border-radius: 25px;
+                        margin-right: $mg-0;
+                    }
+                    span {
+                        @include text($color-gray-0, $fs-2, $fw-normal);
+                    }
+                }
+            }
+            .location {
+                padding: 0 25px 0 10px;
+                line-height: 2;
+                img {
+                    width: 20px;
+                    opacity: 0.5;
+                }
+                select {
+                    border: none;
+                    background: none;
+                    @include text($color-gray-0, $fs-2, $fw-normal);
+                    &:focus {
+                        outline: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include mediaQueryMax(getBreakpoints('medium')) {
+    .header {
+        .header-center {
+            display: none;
+        }
+    }
+}
+
+@include mediaQueryMax(getBreakpoints('small')) {
+    .header {
+        .header-center {
+            display: none;
+        }
+        .header-right {
+            display: none !important;
+        }
+    }
+}

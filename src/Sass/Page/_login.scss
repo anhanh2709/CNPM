@@ -1,0 +1,141 @@
+.loginMovie {
+    position: relative;
+    background-image: url("/img/background.jpg");
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 720px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(200, 220, 220, 0.5);
+        z-index: -1;
+    }
+    .loginMovie__content {
+        width: 500px;
+        border-radius: 10px;
+        padding: 55px 55px 37px 55px;
+        background: linear-gradient(to bottom, $color-red-2, $color-red);
+        .formLogin {
+            text-align: center;
+            .formLogin__logo {
+                margin: 0 auto;
+                width: 120px;
+                height: 120px;
+                background-color: white;
+                border-radius: 50%;
+                i {
+                    @include icon($color-black-0,
+                    $fs-5 * 2);
+                }
+            }
+            h2 {
+                @include text($color-white-0,
+                $fs-6+6,
+                $fw-regular);
+                text-transform: uppercase;
+                padding: 27px 0 34px;
+                margin: 0;
+            }
+            .formLogin__username,
+            .formLogin__password {
+                position: relative;
+                border-bottom: 2px solid rgba(255, 255, 255, 0.24);
+                margin-bottom: $mg-8;
+                i {
+                    position: absolute;
+                    top: 12px;
+                    left: 0;
+                    @include icon($color-white-0,
+                    $fs-3);
+                    padding-left: $pd-6;
+                }
+                input {
+                    width: 100%;
+                    height: 45px;
+                    background: transparent;
+                    border: none;
+                    cursor: auto;
+                    padding: 0 5px 0 30px;
+                    @include text($color-white-0,
+                    $fs-3,
+                    $fw-regular);
+                    line-height: 1.2;
+                    &:focus {
+                        outline: none;
+                        border: none;
+                        padding-left: 5px;
+                    }
+                    &::placeholder {
+                        @include text($color-white-0,
+                        $fs-3,
+                        $fw-regular);
+                    }
+                }
+            }
+            .formLogin__rememberMe {
+                text-align: left;
+                padding: $pd-6 0 $pd-5 + 5 $pd-6;
+                display: flex;
+                align-items: center;
+                span {
+                    padding-right: $pd-4;
+                    @include text($color-white-0,
+                    $fs-2,
+                    $fw-regular);
+                    cursor: pointer;
+                }
+                input[type="checkbox"] {
+                    width: 16px;
+                    height: 16px;
+                    background: white;
+                    margin-right: $mg-2;
+                    &:focus {
+                        background-color: white;
+                        outline: none;
+                    }
+                }
+            }
+            .btnLogin {
+                @include text($color-black-1,
+                $fs-3,
+                $fw-medium);
+                padding: 0 $pd-3;
+                min-width: 120px;
+                height: 50px;
+                border-radius: 25px;
+                border: none;
+                transition: 0.4s;
+                &:hover {
+                    border: 1px solid white;
+                    background: linear-gradient(to right, $color-red-2, transparent 100%);
+                }
+                &:focus {
+                    outline: none;
+                }
+            }
+            .forgotPass {
+                padding-top: $pd-5 * 3;
+                a {
+                    @include text($color-black-1,
+                    $fs-2,
+                    $fw-regular);
+                    transition: all 0.4s;
+                    &:hover {
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+}
